@@ -76,9 +76,57 @@ img.logo{
   font-size: 45px;
 }
 
+/*Registration form */
+form.form-container{
+  background-color: white;
+  height: 900px;
+  width:  650px;
+  display: block;
+  margin: auto;
+  margin-bottom: 50px;
+  border-radius: 30px;
+  padding-top: 40px;
+}
+
+.userClass,
+.nameClass,
+.surnameClass,
+.passwordClass,
+.suburbClass,
+.postcodeClass,
+.stateClass,
+.mobileClass,
+.addressClass,
+.inputRegForm{
+  margin-left: 60px;
+}
+
+.inputRegForm{
+  width: 500px;
+  height: 40px;
+  font-size: 1rem;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.newAccount{
+  display: block;
+  margin: auto;
+  background-color: var(--secondary-color-branding);
+  color: white;
+  border: none;
+  padding: 20px 100px;
+  font-size: 1rem;
+  margin-top: 40px;
+  cursor: pointer;
+}
+.newAccount:hover{
+  background-color: var(--primary-color-branding);
+}
+
 /*Footer*/
 footer{
-  background-color: var(--primary-color-branding);
+  background-color: var(--secondary-color-branding);
   padding: 30px;
   text-align: center;
+  color: var(--tertiary-color-branding);
 }
