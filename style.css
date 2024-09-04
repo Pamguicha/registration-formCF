@@ -7,7 +7,7 @@
   --replacement-color-branding: #8DD2DD;
 }
 body{
-  background-color:#e0fafe;
+  background-color:#FFFFFF;
   font-family: "Lato",sans-serif;
   letter-spacing: 0.7px;
 }
@@ -72,14 +72,15 @@ img.logo{
 }
 
 .title{
+  margin: 50px auto;
   text-align: center;
   font-size: 45px;
 }
 
 /*Registration form */
 form.form-container{
-  background-color: white;
-  height: 900px;
+  background-color:var(--primary-color-branding);
+  height: 800px;
   width:  650px;
   display: block;
   margin: auto;
@@ -120,7 +121,21 @@ form.form-container{
   cursor: pointer;
 }
 .newAccount:hover{
-  background-color: var(--primary-color-branding);
+  background-color: var(--tertiary-color-branding);
+  color: var(--secondary-color-branding);
+}
+.secondary-btn{
+  margin-top: 20px;
+  margin-left: 75px;
+  background-color: var(--replacement-color-branding);
+  border: none;
+  cursor: pointer;
+  padding: 15px;
+}
+
+.secondary-btn:hover{
+  background-color: var(--secondary-color-branding);
+  color: var(--tertiary-color-branding);
 }
 
 /*Footer*/

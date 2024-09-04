@@ -11,6 +11,41 @@
   <title>Registration form | Computer Force</title>
 </head>
 
+<?php
+// 1: Global variables
+$username = "";
+$firstName = "";
+$surname = "";
+$password = "";
+$address = "";
+$suburb = "";
+$postcode = "";
+$state = "";
+$mobilephone = "";
+$message = "";
+
+// 2: Handle events by calling correct function
+if (filter_input(INPUT_SERVER, "REQUEST_METHOD") == "POST") {
+  if (filter_input(INPUT_POST, "Create New Account")) {
+    newAccount();
+  }
+  if (filter_input(INPUT_POST, "Check Details")) {
+    checkDetails();
+  }
+  if (filter_input(INPUT_POST, "Update Details")) {
+    updateDetails();
+  }
+  if (filter_input(INPUT_POST, "Delete Account")) {
+    deleteAccount();
+  }
+}
+
+//3: Functions
+
+
+
+?>
+
 <body>
   <img class="logo" src="images/logoCf.png" alt="an image of the logo of Computer Force">
   <?php
@@ -66,11 +101,14 @@
       <br>
       <input class="newAccount" type="submit" name="Create New Account" value="Create New Account">
       <br>
-      <input type="submit" name="Check Details" value="Check Details">
+      <input class="secondary-btn" type="submit" name="Check Details" value="Check Details">
 
-      <input type="submit" name="Update Details" value="Update Details">
-      <input type="submit" name="DeleteAccount" value="Delete Account">
+      <input class="secondary-btn" type="submit" name="Update Details" value="Update Details">
+      <input class="secondary-btn" type="submit" name="DeleteAccount" value="Delete Account">
     </form>
+    <div name="OutputMessage">
+      <?php echo "Output Message: " . $message; ?>
+    </div>
   </main>
 
   <?php
