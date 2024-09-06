@@ -77,6 +77,19 @@ img.logo{
   font-size: 45px;
 }
 
+/*homepage*/
+.databaseContainer{
+  width: 80%;
+  border: none;
+  border-collapse: separate;
+}
+
+tr{
+  background-color: #00B4C5;
+}
+
+
+
 /*Registration form */
 form.form-container{
   background-color:var(--primary-color-branding);

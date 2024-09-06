@@ -4,16 +4,7 @@
       <a class="menuClickeableLink homeLink" href="index.php">Home</a>
     </li>
     <li class="menuListLink">
-      <a class="menuClickeableLink" href="products.php">Products</a>
-    </li>
-    <li class="menuListLink">
-      <a class="menuClickeableLink" href="register.php">Register</a>
-    </li>
-    <li class="menuListLink">
-      <a class="menuClickeableLink" href="cart.php">Cart</a>
-    </li>
-    <li class="menuListLink">
-      <a class="menuClickeableLink" href="about.php">About</a>
+      <a class="menuClickeableLink" href="add.php">Register</a>
     </li>
   </ul>
   <form role="search" class="search-container">
