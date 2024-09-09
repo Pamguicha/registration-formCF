@@ -22,59 +22,56 @@
     <form class="form-container" action="addAction.php" method="post" name="add">
       <label class="userClass" for="username">Username:
         <br>
-        <input class="inputRegForm" type="text" id="username" name="userName" value="<?php echo $username; ?>">
+        <input class="inputRegForm" type="text" name="username">
       </label>
       <br>
       <label class="nameClass" for="firstname">First Name:
         <br>
-        <input class="inputRegForm" type="text" id="firstname" name="firstName" value="<?php echo $firstName; ?>">
+        <input class="inputRegForm" type="text" name="firstname">
       </label>
       <br>
       <label class="surnameClass" for="surname">Surname:
         <br>
-        <input class="inputRegForm" type="text" id="surname" name="surName" value="<?php echo $surname; ?>">
+        <input class="inputRegForm" type="text" name="surname">
       </label>
       <br>
       <label class="passwordClass" for="password">Password:
         <br>
-        <input class="inputRegForm" type="password" id="password" name="passWord" value="<?php echo $password; ?>">
+        <input class="inputRegForm" type="password" name="password">
       </label>
       <br>
       <label class="addressClass" for="address">Address:
         <br>
-        <input class="inputRegForm" type="text" id="address" name="adDress" value="<?php echo $address; ?>">
+        <input class="inputRegForm" type="text" name="address">
       </label>
       <br>
       <label class="suburbClass" for="suburb">Suburb:
         <br>
-        <input class="inputRegForm" type="text" id="suburb" name="suBurb" value="<?php echo $suburb; ?>">
+        <input class="inputRegForm" type="text" name="suburb">
       </label>
       <br>
       <label class="postcodeClass" for="postcode">Postcode:
         <br>
-        <input class="inputRegForm" type="number" id="postcode" name="postCode" value="<?php echo $postcode; ?>">
+        <input class="inputRegForm" type="number" name="postcode">
       </label>
       <br>
       <label class="stateClass" for="state">State:
         <br>
-        <input class="inputRegForm" type="text" id="state" name="sTate" value="<?php echo $state; ?>">
+        <input class="inputRegForm" type="text" name="state">
       </label>
       <br>
       <label class="mobileClass" for="mobilephone">Mobilephone:
         <br>
-        <input class="inputRegForm" type="text" id="mobilephone" name="mobilePhone" value="<?php echo $mobilephone; ?>">
+        <input class="inputRegForm" type="text" name="mobilephone">
       </label>
       <br>
-      <input class="newAccount" type="submit" name="Create New Account" value="Create New Account">
+      <input class="newAccount" type="submit" name="Create New Account" value="Add">
       <br>
       <input class="secondary-btn" type="submit" name="Check Details" value="Check Details">
 
       <input class="secondary-btn" type="submit" name="Update Details" value="Update Details">
       <input class="secondary-btn" type="submit" name="DeleteAccount" value="Delete Account">
     </form>
-    <div name="OutputMessage">
-      <?php echo "Output Message: " . $message; ?>
-    </div>
   </main>
 
   <?php

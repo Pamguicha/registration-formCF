@@ -11,6 +11,12 @@
   <title>Homepage | Computer Force</title>
 </head>
 
+<?php
+//Include the database connection file
+require_once("dbConnection.php");
+//Fetch data in descending order (lastest entry first)
+$result = mysqli_query($mysqli, "SELECT * FROM user ORDER BY id DESC");
+?>
 
 <body>
   <img class="logo" src="images/logoCf.png" alt="an image of the logo of Computer Force">
@@ -37,11 +43,17 @@
     // Fetch the next row of a result set as an associative array
     while ($res = mysqli_fetch_assoc($result)) {
       echo "<tr>";
-      echo "<td>" . $res['name'] . "</td>";
-      echo "<td>" . $res['age'] . "</td>";
-      echo "<td>" . $res['email'] . "</td>";
-      echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a> | 
-			<a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
+      echo "<td>" . $res['username'] . "</td>";
+      echo "<td>" . $res['firstname'] . "</td>";
+      echo "<td>" . $res['surname'] . "</td>";
+      echo "<td>" . $res['password'] . "</td>";
+      echo "<td>" . $res['address'] . "</td>";
+      echo "<td>" . $res['suburb'] . "</td>";
+      echo "<td>" . $res['postcode'] . "</td>";
+      echo "<td>" . $res['state'] . "</td>";
+      echo "<td>" . $res['mobilephone'] . "</td>";
+
+      //add last echo to edit or delete
     }
     ?>
   </table>
