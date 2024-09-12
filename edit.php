@@ -18,10 +18,10 @@ require_once("dbConnection.php");
 $username = $_GET['username'];
 
 //Select data associated with this particular username
-$result = mysqli_query(mysql: $mysqli, query: "SELECT * FROM user WHERE username = $username");
+$result = mysqli_query($mysqli, "SELECT * FROM user WHERE username = $username");
 
 //fetch the next row of a result set as an associative array
-$resultData = mysqli_fetch_assoc(result: $result);
+$resultData = mysqli_fetch_assoc($result);
 
 $username = $resultData['username'];
 $firstName = $resultData['firstname'];
@@ -37,6 +37,9 @@ $mobilephone = $resultData['mobilephone'];
 <?php include 'navigation.php';
 ?>
 <h1 class="title">Edit data</h1>
+<p>
+  <a href="index.php">Home</a>
+</p>
 <form name="edit" method="post" action="editAction.php">
   <label class="userClass" for="username">Username:
     <br>
