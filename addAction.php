@@ -68,7 +68,6 @@
       echo "<p><font color='green'>Data added successfully!</p>";
       echo "<a href='index.php'>View Result</a>";
 
-
     }
   }
   ?>

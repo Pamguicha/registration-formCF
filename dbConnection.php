@@ -9,8 +9,8 @@ $mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $d
 
 
 // Check connection
-if (!$mysqli) {
+/*if (!$mysqli) {
   die("Connection failed: " . mysqli_connect_error());
 } else {
-  echo "Connected successfully";
-}
+  echo "User added successfully";
+}*/
