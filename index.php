@@ -15,7 +15,7 @@
 //Include the database connection file
 require_once("dbConnection.php");
 //Fetch data in descending order (lastest entry first)
-$result = mysqli_query($mysqli, "SELECT * FROM user ORDER BY id DESC");
+$result = mysqli_query($mysqli, "SELECT * FROM user ORDER BY username DESC");
 ?>
 
 <body>
@@ -54,6 +54,8 @@ $result = mysqli_query($mysqli, "SELECT * FROM user ORDER BY id DESC");
       echo "<td>" . $res['mobilephone'] . "</td>";
 
       //add last echo to edit or delete
+      echo "<td><a href=\"edit.php?username=$res[username]\">Edit</a> | 
+			<a href=\"delete.php?username=$res[username]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
     }
     ?>
   </table>

@@ -84,10 +84,9 @@ img.logo{
   border-collapse: separate;
 }
 
-tr{
-  background-color: #00B4C5;
+td{
+  background-color: #B1E1EA;
 }
-
 
 
 /*Registration form */
