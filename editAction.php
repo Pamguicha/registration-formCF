@@ -44,7 +44,7 @@ if (isset($_POST['update'])) {
     }
   } else {
     //Update the database table
-    $result = mysqli_query(mysql: $mysqli, query: "UPDATE user SET `username` = '$username', `firstname` = '$firstname', `surname` = '$surname', `password` = '$password', `address` = '$address', `suburb` = '$suburb', `postcode` = '$postcode', `state`= '$state', `mobilephone` = '$mobilephone' WHERE `username` = $username");
+    $result = mysqli_query($mysqli, "UPDATE user SET `username` = '$username', `firstname` = '$firstName', `surname` = '$surname', `password` = '$password', `address` = '$address', `suburb` = '$suburb', `postcode` = '$postcode', `state`= '$state', `mobilephone` = '$mobilephone' WHERE `username` = '$username' ");
 
     // Display success message
     echo "<p><font color='green'>Data updated successfully!</p>";

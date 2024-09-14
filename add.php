@@ -67,10 +67,6 @@
       <br>
       <input class="newAccount" type="submit" name="submit" value="Add">
       <br>
-      <input class="secondary-btn" type="submit" name="Check Details" value="Check Details">
-
-      <input class="secondary-btn" type="submit" name="update" value="Update">
-      <input class="secondary-btn" type="submit" name="DeleteAccount" value="Delete Account">
     </form>
   </main>
 

@@ -5,7 +5,24 @@ require_once("dbConnection.php");
 //Get username parameter value from URL
 $username = $_GET['username'];
 
-//Delete row from the database table
-$result = mysqli_query(mysql: $mysqli, query: "DELETE FROM user WHERE username = $username");
+//Sanitize the username to prevent SQL injection
+$sanitizedUsername = mysqli_real_escape_string($mysqli, $username);
 
-header(header: "Location:index.php");
+//Delete row from the database table
+$result = mysqli_query($mysqli, "DELETE FROM user WHERE username = '$sanitizedUsername' ");
+
+
+if (!$result) {
+  echo "Error deleting user: " . mysqli_error($mysqli);
+} else {
+  header("Location:index.php");
+  exit();
+
+}
+
+
+
+
+
+
+
