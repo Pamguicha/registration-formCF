@@ -26,7 +26,7 @@
     $state = mysqli_real_escape_string($mysqli, $_POST['state']);
     $mobilephone = mysqli_real_escape_string($mysqli, $_POST['mobilephone']);
 
-    //Check for empty fields
+    // Check for empty fields
     if (empty($username) || empty($firstName) || empty($surname) || empty($password) || empty($address) || empty($suburb) || empty($postcode) || empty($state) || empty($mobilephone)) {
       if (empty($username)) {
         echo "<font color='red'> Username field is empty</font> <br/>";
@@ -55,19 +55,31 @@
       if (empty($mobilephone)) {
         echo "<font color='red'> Mobilephone field is empty</font> <br/>";
       }
-
       //Show link to the previous page
       echo "<br/><a href='javascript:self.history.back();'>Go Back</a>";
     } else {
-      //If all the fields are filled (not empty)
+      // Check if username already exists using a SELECT statement
+      $checkUsernameQuery = "SELECT COUNT(*) AS count FROM user WHERE username = ?";
+      $checkUsernameStmt = mysqli_prepare($mysqli, $checkUsernameQuery);
+      mysqli_stmt_bind_param($checkUsernameStmt, "s", $username);
+      mysqli_stmt_execute($checkUsernameStmt);
+      mysqli_stmt_bind_result($checkUsernameStmt, $count);
+      mysqli_stmt_fetch($checkUsernameStmt);
+      mysqli_stmt_close($checkUsernameStmt);
+
+      if ($count > 0) {
+        echo "Username already registered, try another";
+        echo "<br/><a href='javascript:self.history.back();'>Go Back</a>";
+      } else {
+        // If all the fields are filled (not empty) and username is unique
   
-      //Insert data into database
-      $result = mysqli_query($mysqli, "INSERT INTO user(`username`, `firstname`, `surname`, `password`, `address`, `suburb`, `postcode`, `state`, `mobilephone`) VALUES ('$username', '$firstName', '$surname', '$password', '$address','$suburb', '$postcode', '$state', '$mobilephone')");
+        //Insert data into database
+        $result = mysqli_query($mysqli, "INSERT INTO user(`username`, `firstname`, `surname`, `password`, `address`, `suburb`, `postcode`, `state`, `mobilephone`) VALUES ('$username', '$firstName', '$surname', '$password', '$address','$suburb', '$postcode', '$state', '$mobilephone')");
 
-      //Display success message
-      echo "<p><font color='green'>Data added successfully!</p>";
-      echo "<a href='index.php'>View Result</a>";
-
+        //Display success message
+        echo "<p><font color='green'>Data added successfully!</p>";
+        echo "<a href='index.php'>View Result</a>";
+      }
     }
   }
   ?>
