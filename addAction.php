@@ -73,7 +73,7 @@
       } else {
         // Check if password is above 8 char
         if (strlen($password) <= 8) {
-          echo "Password must be more than 8 characters";
+          echo "Password must be more than 8 characters always";
           echo "<br/><a href='javascript:self.history.back();'>Go Back</a>";
         } else {
 
