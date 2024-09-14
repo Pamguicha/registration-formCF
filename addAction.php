@@ -71,14 +71,21 @@
         echo "Username already registered, try another";
         echo "<br/><a href='javascript:self.history.back();'>Go Back</a>";
       } else {
-        // If all the fields are filled (not empty) and username is unique
-  
-        //Insert data into database
-        $result = mysqli_query($mysqli, "INSERT INTO user(`username`, `firstname`, `surname`, `password`, `address`, `suburb`, `postcode`, `state`, `mobilephone`) VALUES ('$username', '$firstName', '$surname', '$password', '$address','$suburb', '$postcode', '$state', '$mobilephone')");
+        // Check if password is above 8 char
+        if (strlen($password) <= 8) {
+          echo "Password must be more than 8 characters";
+          echo "<br/><a href='javascript:self.history.back();'>Go Back</a>";
+        } else {
 
-        //Display success message
-        echo "<p><font color='green'>Data added successfully!</p>";
-        echo "<a href='index.php'>View Result</a>";
+          // If all the fields are filled (not empty) and username is unique
+  
+          //Insert data into database
+          $result = mysqli_query($mysqli, "INSERT INTO user(`username`, `firstname`, `surname`, `password`, `address`, `suburb`, `postcode`, `state`, `mobilephone`) VALUES ('$username', '$firstName', '$surname', '$password', '$address','$suburb', '$postcode', '$state', '$mobilephone')");
+
+          //Display success message
+          echo "<p><font color='green'>Data added successfully!</p>";
+          echo "<a href='index.php'>View Result</a>";
+        }
       }
     }
   }
