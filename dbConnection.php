@@ -1,6 +1,6 @@
 <?php
 $databaseHost = 'localhost';
-$databaseName = 'computerForce';
+$databaseName = 'ecommerce';
 $databaseUsername = 'santa';
 $databasePassword = '1234';
 

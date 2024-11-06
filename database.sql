@@ -1,6 +1,6 @@
-create database computerForce;
+create database ecommerce;
 
-use computerForce;
+use ecommerce;
 
 CREATE TABLE `user` (
   `username` varchar(255) NOT NULL,
